@@ -21,7 +21,10 @@
 8. [Extras](#8-extras)
 9. [Best Practices](#9-best-practices)
 10. [Testing](#10-testing)
-11. [Conclusion](#11-conclusion)
+11. [Usage](#11-usage)
+12. [Contributing](#12-contributing)
+13. [References](#13-references)
+14. [Conclusion](#14-conclusion)
 
 ## 1. Introduction
 
@@ -280,6 +283,68 @@ Testing was conducted in both the dev and prod environments. The following tests
 
 Using a remote backend to store the Terraform state file is a best practice that offers several advantages. It improves collaboration in team environments by providing shared access to state information and mitigating the risk of concurrent modifications through locking mechanisms. Security is enhanced as sensitive information is stored securely, preventing accidental exposure. Remote backends support versioning, facilitating a historical view of infrastructure changes and simplifying rollback procedures. Additionally, the flexibility of storage options, such as Amazon S3 or Azure Storage, ensures durability, scalability, and reliability. Adopting a consistent workflow across various environments is streamlined, with separate state files per environment, contributing to a more organized and controlled infrastructure management approach.
 
-## 11. Conclusion
+## 11. Usage
 
-This documentation provides a comprehensive guide to the Terraform project structure, configurations, and best practices. For any questions or issues, refer to the relevant sections or contact the project maintainers.
+This section provides instructions on how to use the project to deploy the LAMP stack and maintain the server environment.
+
+To use this project:
+
+1. Clone the project's GitHub repository: [GitHub Repository Link](https://github.com/Hamed-altschool/Capricorn-project.git).
+
+2. Ensure you have terraform installed on your local machine. to install terraform follow the instructions on this link: [Terraform Installation](https://learn.hashicorp.com/tutorials/terraform/install-cli).
+
+3. Ensure you have AWS CLI installed and configured on your local machine. to install AWS CLI follow the instructions on this link: [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
+
+4. Ensure you have an AWS account with appropriate credentials.
+
+5. Navigate to the project directory.
+
+6. change the values of the variables in the `terraform.tfvars` file to match your environment.
+
+7. change the values of the variables in the `environments/dev/terraform.tfvars` file to match your environment.
+
+8. change the values of the variables in the `environments/prod/terraform.tfvars` file to match your environment.
+
+9. change the values of the backend configuration in the `environments/dev/backend.tf` file to match your environment.
+
+10. change the values of the backend configuration in the `environments/prod/backend.tf` file to match your environment.
+
+11. change the values of the provider configuration in the `environments/dev/main.tf` file to match your environment.
+
+12. change the values of the provider configuration in the `environments/prod/main.tf` file to match your environment.
+
+13. Run the `init.sh` script to initialize Terraform across all the available environments.
+
+14. Run the `plan.sh` script to plan Terraform configurations across all the available environments.
+
+15. Run the `apply.sh` script to apply Terraform configurations across all the available environments.
+
+16. Run the `destroy.sh` script to destroy Terraform configurations across all the available environments.
+
+## 12. Contributing
+
+Contributions to this project are highly welcomed. If you would like to contribute, follow these steps:
+
+1. Fork the project's GitHub repository.
+
+2. Create a new branch for your feature or bug fix.
+
+3. Make your changes and commit them to your branch.
+
+4. Submit a pull request to the main repository for review and integration.
+
+## 13. References
+
+- [Terraform Documentation](https://www.terraform.io/docs/index.html)
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform AWS Modules](https://registry.terraform.io/modules/terraform-aws-modules)
+- [Terraform Best Practices](https://www.terraform-best-practices.com/)
+- [AWS CLI Documentation](https://docs.aws.amazon.com/cli/index.html)
+- [AWS CLI Configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+- [AWS CLI Credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+
+## 14. Conclusion
+
+This documentation provides a comprehensive guide to the Terraform project structure, configurations, and best practices. If you have any questions or need further assistance, please don't hesitate to reach out to [me](https://twitter.com/qurtana) or the project contributors.
+
+Thank you for using this project, and best of luck with your cloud engineering endeavors!

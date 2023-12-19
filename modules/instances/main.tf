@@ -30,8 +30,8 @@ data "aws_ami" "ubuntu-20-04-LTS-free-tier" {
 
 # creates a PEM (and OpenSSH) formatted private key
 resource "tls_private_key" "rsa-4096-key" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
+  algorithm              = "RSA"
+  rsa_bits               = 4096
 }
 
 # creates a keypair in AWS
@@ -42,8 +42,8 @@ resource "aws_key_pair" "key_pair" {
 
 # save the private key on the local filesystem
 resource "local_file" "private_key" {
-  content  = tls_private_key.rsa-4096-key.private_key_pem
-  filename = "${path.module}/${var.project_name}-key.pem"
+  content                = tls_private_key.rsa-4096-key.private_key_pem
+  filename               = "${path.module}/${var.project_name}-key.pem"
 }
 
 # create multiple ec2 instances, one on the private subnet and one on the public subnet, using the private security group and public security group respectively

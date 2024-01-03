@@ -1,4 +1,4 @@
-# create security group for the application load balancer
+# create security group for the subnets
 resource "aws_security_group" "public-instance-sg" {
   name               = "${var.project_name}-public-instance-sg"
   description        = "enable http/https access on port 80/443, and ssh access on 22"
